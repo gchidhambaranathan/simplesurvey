@@ -63,7 +63,7 @@ exports.getAllRolePermissions = function getAllRolePermissions (req, res){
 }
 
 exports.deletePermissionByRole = function deletePermissionByRole(req, res){
-    RolePermission.findByIdAndDelete(req.params.uid).then(data){
+    RolePermission.findByIdAndDelete(req.params.uid).then(data => {
 
         if(!data) {
             res.status(404).send({
@@ -74,7 +74,7 @@ exports.deletePermissionByRole = function deletePermissionByRole(req, res){
                messgae : 'Deleted'
            }) 
         }
-    }
+    })
 }
 
 exports.updateRolePermission = function updateRolePermission(req, res){
