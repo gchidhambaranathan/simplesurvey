@@ -16,5 +16,8 @@ router.post('/login', login_controller.loginUser)
 
 router.post('/rolepermissions', role_perm_controller.createRolePermissions)
 router.get('/rolepermissions/:roleid', role_perm_controller.getPermissionByRole)
+router.delete('/rolepermissions/:uid', user_controller.deleteUser)
+router.get('/rolepermissions', user_controller.getAllUsers)
+router.put('/rolepermissions/:uid', user_controller.updateUser)
 
 module.exports = router

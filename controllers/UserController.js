@@ -3,90 +3,22 @@ var AuthService = require('../auth/AuthCheck');
 var UserService = require('../service/UserService')
 
 exports.registerUser = function(req, res){
-
-    var user = new UserDetails({
-        first_name : req.body.first_name,
-        last_name : req.body.last_name,
-        email: req.body.email,
-        mobile: req.body.mobile,
-        country:req.body.country,
-        roles: req.body.roles,
-        creds: {
-            username: req.body.username
-           
-        }
-    });
-    user.setPassword(req.body.password)
-    
-    UserDetails.create(user).then(data => {
-        data.creds = undefined;
-        res.status(201).send(data)
-    }).catch(error => {
-        res.status(500).send({
-            errorMessage: error
-        })
-    })
+    AuthService.checkAuthenticated(req, res,'CUSER', UserService.registerUser)
+  
 }
 
 exports.getExistingUser = function(req, res){
-    AuthService.checkAuth(req,res);
-    UserDetails.findById(req.params.uid).then(data => {
-        if(!data){
-            res.status(404).send( {
-                messgae: "No user exists"
-            })
-            
-        }else {
-            data.creds = undefined;
-            res.status(200).send(data)
-        }
-        
-    }).catch(error => {
-        res.status(500).send({
-            errorMessage: error
-        })
-    })
+   AuthService.checkAuthenticated(req, res, 'GUSER', UserService.getExistingUser)
 }
 
 exports.deleteUser = function(req, res){
     AuthService.checkAuthenticated(req, res,'DUSER', UserService.deleteUserById)
 }
 
-
-
 exports.getAllUsers = function(req, res){
-    const filter = {};
-    UserDetails.find(filter, function (err, data) {
-        if(data){
-            data.forEach( user => {
-                user.creds = undefined
-            })
-            res.status(200).send(data)
-        }else if(err){
-            res.status(500).send({
-                errorMessage: err
-            })
-        }
-        
-    })
+    AuthService.checkAuthenticated(req, res, 'GAUSER', UserService.getAllUsers)   
 }
 
 exports.updateUser = function(req,res){
-    
-
-    UserDetails.findByIdAndUpdate(req.params.uid, req.body, { useFindAndModify: false }).then(data => {
-        if(!data){
-            res.status(500).send({
-                messgae: "Unable to update"
-            })
-        }else {
-            res.status(200).send({
-                messgae: "Updated Successfully"
-            })
-        }
-    }).catch(err => {
-        res.status(500).send({
-          errorMessage: "Error updating Tutorial with id=" + req.params.uid + err
-        });
-      });
+    AuthService.checkAuthenticated(req, res, 'UUSER', UserService.updateUser)
 }

@@ -11,7 +11,7 @@ exports.checkAuthenticated = function(req, res, funName, doAction){
             try {
 
                 var jwtToken = jwt.verify(token,'top-secret-phrase');
-                parseJWT(jwtToken, res, funName, doAction)
+                parseJWT(jwtToken, req, res, funName, doAction)
             } catch(e) {
                 console.log('error...');
                 console.log(e);
@@ -41,7 +41,7 @@ function unAuthorizeResponse (res) {
     })
 }
 
-function parseJWT(parsedJwt, res, funName, doAction){
+function parseJWT(parsedJwt,  req, res, funName, doAction){
     var forbidden = true;
                   
     var roleclaiams = parsedJwt.body.roles; // Will contain the header and 
@@ -59,7 +59,7 @@ function parseJWT(parsedJwt, res, funName, doAction){
             authStaus = 'Forbidden'
             unAuthorizeResponse(res)
         }else {
-            doAction();
+            doAction(req, res);
         }
 
 
