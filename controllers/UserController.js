@@ -4,6 +4,7 @@ var UserService = require('../service/UserService')
 
 exports.registerUser = function(req, res){
     AuthService.checkAuthenticated(req, res,'CUSER', UserService.registerUser)
+    //UserService.registerUser(req, res)
   
 }
 

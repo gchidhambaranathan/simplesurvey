@@ -30,19 +30,21 @@ exports.createRolePermissions = function createRolePermissions(req, res) {
 }
 
 exports.getPermissionByRole = function(req, res){
-    var role = req.params.roleid
-    var filter = {role_id : role}
-    console.log(filter)
-    RolePermission.find(filter, function(err, data){
-
-        if(data){
-            res.status(200).send(data)
-        }else if(err){
-            res.status(500).send({
-                errorMessage: err
-            })
-        }
+   RolePermission.findById(req.params.uid).then(data => {
+    if(!data){
+        res.status(404).send( {
+            messgae: "No Role exists"
+        })
+        
+    }else {
+       res.status(200).send(data)
+    }
+    
+}).catch(error => {
+    res.status(500).send({
+        errorMessage: error
     })
+})
 }
 
 
