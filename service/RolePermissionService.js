@@ -92,7 +92,7 @@ exports.updateRolePermission = function updateRolePermission(req, res){
         }
     }).catch(err => {
         res.status(500).send({
-        errorMessage: "Error updating Tutorial with id=" + req.params.uid + err
+        errorMessage: "Error updating role with id=" + req.params.uid + err
         });
     });
 }

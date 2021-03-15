@@ -16,7 +16,7 @@ app.use(express.static('public'));
 
 var survye_route = require('./routes/SurveyRoute')
 
-app.use('/survey',survye_route)
+app.use('/simplesurvey',survye_route)
 
 var server = app.listen(8001, 'localhost', () =>{
     console.log('Server is listening')

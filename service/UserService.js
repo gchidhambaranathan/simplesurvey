@@ -87,7 +87,7 @@ exports.deleteUserById = function deleteUserById(req, res) {
             }
         }).catch(err => {
             res.status(500).send({
-            errorMessage: "Error updating Tutorial with id=" + req.params.uid + err
+            errorMessage: "Error updating user with id=" + req.params.uid + err
             });
         }); 
    }
