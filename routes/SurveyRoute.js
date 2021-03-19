@@ -27,4 +27,8 @@ router.get('/survey', survey_controller.getAllSurvey)
 router.delete('/survey/:uid', survey_controller.deleteSurvey)
 router.put('/survey/:uid', survey_controller.updateSurvey)
 
+router.post('/survey/:uid/question', survey_controller.addQuestionToSurvey)
+router.put('/survey/:uid/question/:qid', survey_controller.updateQuestionInSurvey)
+router.delete('/survey/:uid/question/:qid', survey_controller.deleteQuestionInSurvey)
+
 module.exports = router

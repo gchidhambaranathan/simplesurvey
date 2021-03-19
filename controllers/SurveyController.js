@@ -21,3 +21,16 @@ exports.deleteSurvey = function deleteSurvey(req, res){
 exports.updateSurvey = function updateSurvey(req, res){
     AuthService.checkAuthenticated(req, res,'USURVEY',SurveryService.updateSurvey);
 }
+
+
+exports.addQuestionToSurvey = function addQuestionToSurvey(req, res){
+    AuthService.checkAuthenticated(req, res,'USURVEY',SurveryService.addQuestionToSurvey);
+}
+
+exports.updateQuestionInSurvey = function updateQuestionInSurvey(req, res){
+    AuthService.checkAuthenticated(req, res,'USURVEY',SurveryService.updateQuestionInSurvey);
+}
+
+exports.deleteQuestionInSurvey = function deleteQuestionInSurvey(req, res){
+    AuthService.checkAuthenticated(req, res,'USURVEY',SurveryService.deleteQuestionInSurvey);
+}
