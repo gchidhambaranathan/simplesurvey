@@ -2,6 +2,7 @@ const RolePermissionService = require('../service/RolePermissionService')
 const AuthService = require('../auth/AuthCheck')
 
 exports.createRolePermissions = function(req, res){
+    //RolePermissionService.createRolePermissions(req, res)
     AuthService.checkAuthenticated(req, res,'CROLEPERM', RolePermissionService.createRolePermissions)
 }
 

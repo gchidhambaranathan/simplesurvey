@@ -1,0 +1,1040 @@
+{
+	"info": {
+		"_postman_id": "77e78cc9-57f9-43b7-b863-81ca787d4e13",
+		"name": "SURVEY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "username=user&password=password123"
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATEUSER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiYmQzZTE5OGQtN2M1OS00N2M5LTkwNDQtNjgxZTkxNTk2ZGZhIiwiaWF0IjoxNjE2MTUyMDgyLCJleHAiOjE2MTYxNTIzODJ9.qkAPEOJ85pzSk1FZ-xigIdRsq6Fxhk9REJh4tFK5pJ0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"user1first\",\r\n    \"last_name\": \"user1last\",\r\n    \"email\": \"user1@gmail.com\",\r\n    \"mobile\": 9841792223,\r\n    \"country\": \"India\",\r\n    \"username\": \"user1\",\r\n    \"password\": \"password123\",\r\n    \"roles\": [\"USER\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATEUSER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiYmQzZTE5OGQtN2M1OS00N2M5LTkwNDQtNjgxZTkxNTk2ZGZhIiwiaWF0IjoxNjE2MTUyMDgyLCJleHAiOjE2MTYxNTIzODJ9.qkAPEOJ85pzSk1FZ-xigIdRsq6Fxhk9REJh4tFK5pJ0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Madhu\",\r\n    \"last_name\": \"Nathan\",\r\n    \"email\": \"pmmitha@gmail.com\",\r\n    \"mobile\": 9710402780\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/users/60374e98bacebf48245568e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"users",
+						"60374e98bacebf48245568e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETUSER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNTI0MTQ3YjAtZmUwMS00MDljLThlYmUtMDYwYzVmN2Q3Yzg2IiwiaWF0IjoxNjE4OTk4MDQ3LCJleHAiOjE2MTg5OTgzNDd9.XEYzs083DnmLdZFQ0DBZTORn8ED9Kc3yKL0BZmSRXL4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/users/605486392b101a21c0b29001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"users",
+						"605486392b101a21c0b29001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETALLUSERS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNTI0MTQ3YjAtZmUwMS00MDljLThlYmUtMDYwYzVmN2Q3Yzg2IiwiaWF0IjoxNjE4OTk4MDQ3LCJleHAiOjE2MTg5OTgzNDd9.XEYzs083DnmLdZFQ0DBZTORn8ED9Kc3yKL0BZmSRXL4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETEUSER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNWI4OTYwZGMtMjRiNS00MzI1LTgwNmUtNzc3Njc4ODMwYWRjIiwiaWF0IjoxNjE0ODU0MDA0LCJleHAiOjE2MTQ4NTQwNjR9._zmILAS2-iyXwy8YHXqr-dDyRkDbcVN_q2R8vGYT2vA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/users/6040b74fb97a9f11c0de9b2f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"users",
+						"6040b74fb97a9f11c0de9b2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATEROLEPERMISSION",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiZWNkOGZhMzctOWY5OC00ZjE1LWE3OTMtNmY5NTdkYTM1ZmIzIiwiaWF0IjoxNjE5MDAwMzg4LCJleHAiOjE2MTkwMDA2ODh9.Nu-GB717RIv3ammrXfE62StiWiW8d0HRKxv7xuRy1sY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"roleId\": \"ADMIN\",\r\n    \"permissionSetItems\": [\r\n        {\r\n            \"permissions\": [\r\n                \"CUSER\",\r\n                \"GUSER\",\r\n                \"DUSER\",\r\n                \"UUSER\",\r\n                \"GAUSER\"\r\n            ],\r\n            \"name\": \"userallops\"\r\n        },\r\n        {\r\n            \"permissions\": [\r\n                \"CROLEPERM\",\r\n                \"GROLEPERM\",\r\n                \"GAROLEPERM\",\r\n                \"DROLEPERM\",\r\n                \"UROLEPERM\"\r\n            ],\r\n            \"name\": \"roleAllOps\"\r\n        },\r\n        {\r\n            \"permissions\": [\r\n                \"CSURVEY\",\r\n                \"GSURVEY\",\r\n                \"GASURVEY\",\r\n                \"DSURVEY\",\r\n                \"USURVEY\",\r\n                \"GAUSERSURVEY\"\r\n            ],\r\n            \"name\": \"surveyAllOps\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/rolepermissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"rolepermissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATEROLEPERMISSION",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNmZlNjg2MDgtMjMxMi00NDZhLWJiYmYtNTZmNTUyZGE5NjEzIiwiaWF0IjoxNjE5MDAwNjY4LCJleHAiOjE2MTkwMDA5Njh9.Y2yTwR_vn5U9unJvN-uEnRTofgHJae3gIkgnjh1n5d8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"role_id\": \"ADMIN\",\r\n    \"permission_set_items\": [\r\n        {\r\n            \"permissions\": [\r\n                \"CUSER\",\r\n                \"GUSER\",\r\n                \"DUSER\",\r\n                \"UUSER\",\r\n                \"GAUSER\"\r\n            ],\r\n            \"name\": \"userallops\"\r\n        },\r\n        {\r\n            \"permissions\": [\r\n                \"CROLEPERM\",\r\n                \"GROLEPERM\",\r\n                \"GAROLEPERM\",\r\n                \"DROLEPERM\",\r\n                \"UROLEPERM\"\r\n            ],\r\n            \"name\": \"roleAllOps\"\r\n        },\r\n        {\r\n            \"permissions\": [\r\n                \"CSURVEY\",\r\n                \"GSURVEY\",\r\n                \"GASURVEY\",\r\n                \"DSURVEY\",\r\n                \"USURVEY\",\r\n                \"GAUSERSURVEY\"\r\n            ],\r\n            \"name\": \"surveyAllOps\"\r\n        }\r\n    ],\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/rolepermissions/607ffca3a6380e8948230b05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"rolepermissions",
+						"607ffca3a6380e8948230b05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETAllPERMISSIONSBYROLE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNmZlNjg2MDgtMjMxMi00NDZhLWJiYmYtNTZmNTUyZGE5NjEzIiwiaWF0IjoxNjE5MDAwNjY4LCJleHAiOjE2MTkwMDA5Njh9.Y2yTwR_vn5U9unJvN-uEnRTofgHJae3gIkgnjh1n5d8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/rolepermissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"rolepermissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETPERMISSIONSBYROLE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiZjRiYzY1NWYtNDM3NC00ZTcyLThiZGItZTAwYzFkNmY5ZWJkIiwiaWF0IjoxNjE5MDAwMDc4LCJleHAiOjE2MTkwMDAzNzh9.1kjXG2V0o0HtVBUJBGzpFdKLfyt2PzCaYVro7vBMGe4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/rolepermissions/605485bd2b101a21c0b29000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"rolepermissions",
+						"605485bd2b101a21c0b29000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETEPERMISSIONSBYROLE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiMTc0NjlhZmYtNWY5Yy00YjUwLTk2OTktNDgzNGYzNTYxYzM4IiwiaWF0IjoxNjE1MzgyNzc0LCJleHAiOjE2MTUzODMwNzR9.-_hsllrblhSHHjUR7fWfEyc9R6wRmAbsMRZmI04XyaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/rolepermissions/6048c520141b9cca10c296e6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"rolepermissions",
+						"6048c520141b9cca10c296e6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATESURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNzIzYmVkN2EtNzJhNC00NmQ5LTkzNTMtMTM3ODYzMWJjNzc3IiwiaWF0IjoxNjE2MTUyMTY5LCJleHAiOjE2MTYxNTI0Njl9.55zLXIjjXajYu8Btex7IVQYpTF8d3J6JaVZk5qGKLLo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surveyName\" : \"ManagerFeedback Survey1\",\r\n    \"questions\" : [\r\n        {\r\n            \"question\" : \"Is your Manager regulary getting your feedback?\",\r\n            \"options\" : [\r\n               \"Strongly disagree\", \"Somewhat disagree\", \"Neither agree nor disagree\", \"Somewhat agree\", \"Strongly agree\"\r\n            ]\r\n        },\r\n         {\r\n            \"question\" : \"Is your Manager regulary having one to one meeting?\",\r\n            \"options\" : [\r\n               \"Strongly disagree\", \"Somewhat disagree\", \"Neither agree nor disagree\", \"Somewhat agree\", \"Strongly agree\"\r\n            ]\r\n        }\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATESURVET",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiZTM5ZjI3OGEtZmEwZi00MDQ5LWEwMjctNDY3NTQ2ZDZlNWU5IiwiaWF0IjoxNjE1ODA1NjYxLCJleHAiOjE2MTU4MDU5NjF9.G94XDYUaShyJuhWJoipoO7olKuedx9VmRNsnwTB6M_E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surveyName\" : \"ManagerFeedback Survey2\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey/604f350285c27c94080dd4e3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey",
+						"604f350285c27c94080dd4e3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNTI0MTQ3YjAtZmUwMS00MDljLThlYmUtMDYwYzVmN2Q3Yzg2IiwiaWF0IjoxNjE4OTk4MDQ3LCJleHAiOjE2MTg5OTgzNDd9.XEYzs083DnmLdZFQ0DBZTORn8ED9Kc3yKL0BZmSRXL4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey/605486ad2b101a21c0b29002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey",
+						"605486ad2b101a21c0b29002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETALLSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNTI0MTQ3YjAtZmUwMS00MDljLThlYmUtMDYwYzVmN2Q3Yzg2IiwiaWF0IjoxNjE4OTk4MDQ3LCJleHAiOjE2MTg5OTgzNDd9.XEYzs083DnmLdZFQ0DBZTORn8ED9Kc3yKL0BZmSRXL4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATEQUESTIONSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNGE1NmM0ZWYtOTY0ZS00YjcxLTllOGEtMmM5OTEyMmI0OTAwIiwiaWF0IjoxNjE2NTczNjY5LCJleHAiOjE2MTY1NzM5Njl9.pjVKQsqLyH6VrNmjvssTvBUvRznR4-z13FHhDtqsiI4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"Is your Manager regulary is helping on your carrer growth?\",\r\n    \"options\": [\r\n        \"Strongly disagree\",\r\n        \"Somewhat disagree\",\r\n        \"Neither agree nor disagree\",\r\n        \"Somewhat agree\",\r\n        \"Strongly agree\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey/605486ad2b101a21c0b29002/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey",
+						"605486ad2b101a21c0b29002",
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATEQUESTIONSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6InVzZXIxIiwicm9sZXMiOlsiVVNFUiJdLCJqdGkiOiJkMDdhOWY3My0yNjhkLTQ1YjUtODI4Ny0zMGNhYjRiNDZhZmQiLCJpYXQiOjE2MTkwMDI1NDMsImV4cCI6MTYxOTAwMjg0M30.Le6PPFqSivSzYV5jls5oAwuKGiLQPytAji0EF7gsHqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"Is your Manager regulary is helping on your carrer growth?\",\r\n    \"options\": [\r\n        \"Strongly disagree\",\r\n        \"Somewhat disagree\",\r\n        \"Neither agree nor disagree\",\r\n        \"Somewhat agree\",\r\n        \"Strongly agree\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey/604f348485c27c94080dd4e0/question/60546537f8779e76143338ea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey",
+						"604f348485c27c94080dd4e0",
+						"question",
+						"60546537f8779e76143338ea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETEQUESTIONSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiYmU0YzI5MmYtMTRjYy00YzZkLWJlODktY2NlODM1ZmVhNDg4IiwiaWF0IjoxNjE2MTQ1OTgxLCJleHAiOjE2MTYxNDYyODF9.ExoJiF8tB_DaD-eJLskx2E-JX17mOIrKPxeqxLcpa7g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"Is your Manager regulary is helping on your carrer growth?\",\r\n    \"options\": [\r\n        \"Strongly disagree\",\r\n        \"Somewhat disagree\",\r\n        \"Neither agree nor disagree\",\r\n        \"Somewhat agree\",\r\n        \"Strongly agree\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey/60546c815441adb3783f3722/question/60546c815441adb3783f3724",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey",
+						"60546c815441adb3783f3722",
+						"question",
+						"60546c815441adb3783f3724"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETESURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiYmU0YzI5MmYtMTRjYy00YzZkLWJlODktY2NlODM1ZmVhNDg4IiwiaWF0IjoxNjE2MTQ1OTgxLCJleHAiOjE2MTYxNDYyODF9.ExoJiF8tB_DaD-eJLskx2E-JX17mOIrKPxeqxLcpa7g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/survey/60546c815441adb3783f3722",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"survey",
+						"60546c815441adb3783f3722"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATEUSERSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6InVzZXIxIiwicm9sZXMiOlsiVVNFUiJdLCJqdGkiOiIxMTU1NzhiOS1lZThhLTRkNjktOWIwNy00YjAwYWM5ZTc2MTciLCJpYXQiOjE2MTg5OTk1ODAsImV4cCI6MTYxODk5OTg4MH0.YfMO9Xaes58oPfZbVLRItQKmWS1Nb-iKwtEUfUDq5XY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"605486392b101a21c0b29001\",\r\n    \"surveyId\": \"605486ad2b101a21c0b29002\",\r\n    \"userAns\": [\r\n        {\r\n            \"questionId\": \"605486ad2b101a21c0b29003\",\r\n            \"question\": \"Is your Manager regulary getting your feedback?\",\r\n            \"answer\": \"Somewhat agree\"\r\n        },\r\n        {\r\n            \"questionId\": \"605486ad2b101a21c0b29004\",\r\n            \"question\": \"Is your Manager regulary having one to one meeting?\",\r\n            \"answer\": \"Somewhat disagree\"\r\n        },\r\n        {\r\n            \"questionId\": \"605af50f2b101a21c0b29005\",\r\n            \"question\": \"Is your Manager regulary is helping on your carrer growth?\",\r\n            \"answer\": \"Strongly agree\"\r\n        }\r\n    ],\r\n    \"isSubmitted\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/usersurvey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"usersurvey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETUSERSURVEY",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6InVzZXIxIiwicm9sZXMiOlsiVVNFUiJdLCJqdGkiOiJkMDdhOWY3My0yNjhkLTQ1YjUtODI4Ny0zMGNhYjRiNDZhZmQiLCJpYXQiOjE2MTkwMDI1NDMsImV4cCI6MTYxOTAwMjg0M30.Le6PPFqSivSzYV5jls5oAwuKGiLQPytAji0EF7gsHqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"605486392b101a21c0b29001\",\r\n    \"surveyId\": \"605486ad2b101a21c0b29002\",\r\n    \"userAns\": [\r\n        {\r\n            \"questionId\": \"605486ad2b101a21c0b29003\",\r\n            \"question\": \"Is your Manager regulary getting your feedback?\",\r\n            \"answer\": \"Somewhat agree\"\r\n        },\r\n        {\r\n            \"questionId\": \"605486ad2b101a21c0b29004\",\r\n            \"question\": \"Is your Manager regulary having one to one meeting?\",\r\n            \"answer\": \"Somewhat disagree\"\r\n        },\r\n        {\r\n            \"questionId\": \"605af50f2b101a21c0b29005\",\r\n            \"question\": \"Is your Manager regulary is helping on your carrer growth?\",\r\n            \"answer\": \"Strongly agree\"\r\n        }\r\n    ],\r\n    \"isSubmitted\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/usersurvey/607ff94e242b7793c82163da",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"usersurvey",
+						"607ff94e242b7793c82163da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATESURVEYANSWERS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6InVzZXIxIiwicm9sZXMiOlsiVVNFUiJdLCJqdGkiOiJkMDdhOWY3My0yNjhkLTQ1YjUtODI4Ny0zMGNhYjRiNDZhZmQiLCJpYXQiOjE2MTkwMDI1NDMsImV4cCI6MTYxOTAwMjg0M30.Le6PPFqSivSzYV5jls5oAwuKGiLQPytAji0EF7gsHqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_answers\": [\r\n        {\r\n            \"_id\": \"607ff94e242b7793c82163db\",\r\n            \"question_id\": \"605486ad2b101a21c0b29003\",\r\n            \"question\": \"Is your Manager regulary getting your feedback?\",\r\n            \"answer\": \"Strongly agree\"\r\n        },\r\n        {\r\n            \"_id\": \"607ff94e242b7793c82163dc\",\r\n            \"question_id\": \"605486ad2b101a21c0b29004\",\r\n            \"question\": \"Is your Manager regulary having one to one meeting?\",\r\n            \"answer\": \"Strongly agree\"\r\n        },\r\n        {\r\n            \"_id\": \"607ff94e242b7793c82163dd\",\r\n            \"question_id\": \"605af50f2b101a21c0b29005\",\r\n            \"question\": \"Is your Manager regulary is helping on your carrer growth?\",\r\n            \"answer\": \"Strongly agree\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/usersurvey/607ff94e242b7793c82163da",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"usersurvey",
+						"607ff94e242b7793c82163da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SUBMITSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6InVzZXIxIiwicm9sZXMiOlsiVVNFUiJdLCJqdGkiOiI4ZGJhOTg0Yy0zZDZlLTRjNTYtYjMzNC0wN2NmZjEyOWYxNWMiLCJpYXQiOjE2MTkwMDI5MjYsImV4cCI6MTYxOTAwMzIyNn0.csZUfsu1X8rU7LjvPJZEPeFBzY22UPhfneS93v04MQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"605486392b101a21c0b29001\",\r\n    \"surveyId\": \"605486ad2b101a21c0b29002\",\r\n    \"userAns\": [\r\n        {\r\n            \"questionId\": \"605486ad2b101a21c0b29003\",\r\n            \"question\": \"Is your Manager regulary getting your feedback?\",\r\n            \"answer\": \"Somewhat agree\"\r\n        },\r\n        {\r\n            \"questionId\": \"605486ad2b101a21c0b29004\",\r\n            \"question\": \"Is your Manager regulary having one to one meeting?\",\r\n            \"answer\": \"Somewhat disagree\"\r\n        },\r\n        {\r\n            \"questionId\": \"605af50f2b101a21c0b29005\",\r\n            \"question\": \"Is your Manager regulary is helping on your carrer growth?\",\r\n            \"answer\": \"Strongly agree\"\r\n        }\r\n    ],\r\n    \"isSubmitted\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/submitsurvey/607ff94e242b7793c82163da",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"submitsurvey",
+						"607ff94e242b7793c82163da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEARCHSURVEY",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGlkaGEtc3VydmV5LWFwcCIsInN1YiI6ImdjbmF0aGFuIiwicm9sZXMiOlsiQURNSU4iXSwianRpIjoiNzAzNTRiNGMtNzllNC00Yzg1LTkxZjctOGQ1ODcwOTI3MWU4IiwiaWF0IjoxNjE5MTgyMDkwLCJleHAiOjE2MTkxODIzOTB9.q8RE0uaD12KJ27j_80hvmg4e58m5GkcmFSpSXSo7Q3g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"question\" : \"Is your Manager regulary having one to one meeting?\" ,\r\n   \"answer\": \"Strongly agree\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/simplesurvey/usersurvey/.search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"simplesurvey",
+						"usersurvey",
+						".search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
